@@ -52,7 +52,7 @@ stages:
         command: restore
         projects: '**/WebApp.csproj'
     
-      -task: WhiteSource@21
+   - task: WhiteSource@21
       displayName: Restore Nuget Packages
      inputs:
         cwd: '$(System.DefaultWorkingDirectory)'
