@@ -52,7 +52,7 @@ stages:
         command: restore
         projects: '**/WebApp.csproj'
     
-    - task: WhiteSource Bolt@20
+    - task: WhiteSource Bolt@21
       displayName: Scan Nuget Packages
       enabled: ${{ parameters.runCompletePipeline }}
 
