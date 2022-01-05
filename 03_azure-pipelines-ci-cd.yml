@@ -53,7 +53,6 @@ stages:
         projects: '**/WebApp.csproj'
         
    - task: WhiteSource@21
-      displayName: White Source
      displayName: Scan Nuget Packages
       enabled: ${{ parameters.runCompletePipeline }}
 
