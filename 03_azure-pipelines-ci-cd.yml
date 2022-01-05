@@ -51,12 +51,10 @@ stages:
       inputs:
         command: restore
         projects: '**/WebApp.csproj'
-    
-
-    - task: WhiteSource@21
-      displayName: Restore Nuget Packages
-     inputs:
-        cwd: '$(System.DefaultWorkingDirectory)'
+   - task: WhiteSource@21
+      displayName: White Source
+      inputs:
+      cwd: '$(System.DefaultWorkingDirectory)'  
 
 -task: PowerShell@2
       displayName: Prepare for Sonar Cloud
