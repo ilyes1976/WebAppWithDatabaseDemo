@@ -52,11 +52,11 @@ stages:
         command: restore
         projects: '**/WebApp.csproj'
     
-- task: WhiteSource@21
+-task: WhiteSource@21
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
 
-    - task: PowerShell@2
+-task: PowerShell@2
       displayName: Prepare for Sonar Cloud
       enabled: ${{ parameters.runCompletePipeline }}
       inputs:
@@ -175,7 +175,6 @@ stages:
       inputs:
         PathtoPublish: AzureResourceGroupDeployment
         ArtifactName: arm
-
 - stage: Dev_Stage
   displayName: Create & Deploy to Dev
   dependsOn: Build_Stage
