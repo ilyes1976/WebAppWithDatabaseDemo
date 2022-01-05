@@ -51,12 +51,12 @@ stages:
       inputs:
         command: restore
         projects: '**/WebApp.csproj'
-        
-- task: WhiteSource@21
-displayName: Scan Nuget Packages
-enabled: ${{ parameters.runCompletePipeline }}
+    
+    - task: WhiteSource Bolt@20
+      displayName: Scan Nuget Packages
+      enabled: ${{ parameters.runCompletePipeline }}
 
-- task: PowerShell@2
+    - task: PowerShell@2
       displayName: Prepare for Sonar Cloud
       enabled: ${{ parameters.runCompletePipeline }}
       inputs:
@@ -175,6 +175,7 @@ enabled: ${{ parameters.runCompletePipeline }}
       inputs:
         PathtoPublish: AzureResourceGroupDeployment
         ArtifactName: arm
+
 - stage: Dev_Stage
   displayName: Create & Deploy to Dev
   dependsOn: Build_Stage
