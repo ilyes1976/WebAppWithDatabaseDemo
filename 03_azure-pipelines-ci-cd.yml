@@ -54,8 +54,10 @@ stages:
     
 
     - task: WhiteSource@21
+      displayName: Restore Nuget Packages
      inputs:
-      cwd: '$(System.DefaultWorkingDirectory)'
+        cwd: '$(System.DefaultWorkingDirectory)'
+
 -task: PowerShell@2
       displayName: Prepare for Sonar Cloud
       enabled: ${{ parameters.runCompletePipeline }}
