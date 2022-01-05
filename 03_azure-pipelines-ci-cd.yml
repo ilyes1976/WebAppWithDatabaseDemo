@@ -52,9 +52,9 @@ stages:
         command: restore
         projects: '**/WebApp.csproj'
     
--task: WhiteSource@21
-  inputs:
-    cwd: '$(System.DefaultWorkingDirectory)'
+      -task: WhiteSource@21
+     inputs:
+        cwd: '$(System.DefaultWorkingDirectory)'
 
 -task: PowerShell@2
       displayName: Prepare for Sonar Cloud
